@@ -1,0 +1,18 @@
+/*
+ * funciones.h
+ *
+ *  Created on: 23 sep. 2021
+ *      Author: Alanoca Aduviri Jonathan Gerardo
+ */
+
+#ifndef FUNCIONES_H_
+#define FUNCIONES_H_
+
+
+
+#endif /* FUNCIONES_H_ */
+
+void resultados(int suma,int resta,int multiplicacion,float division,long int factorial1,long int factorial2, int numero1, int numero2);
+int calcularOperaciones(int num1,int  num2,int* suma, int* pResta, int* pMultiplicacion, float* pDivisions, long int* pFactorial1, long int* pFactotial2);
+int ingresarNumero(int* numero);
+int menu(int num1Validado,int  num2Validado, int num1,int num2);

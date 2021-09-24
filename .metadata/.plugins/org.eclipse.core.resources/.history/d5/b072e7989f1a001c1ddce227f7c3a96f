@@ -1,0 +1,110 @@
+/*
+ ============================================================================
+*Programa   :TP 1
+*
+*Objetivo   :Realizar una cacluladora con las operaciones:
+			 Sumar, restar, multiplicar dividir y el factorial
+
+*Version    : 0.1 fecha fin
+*Autor      : Alanoca Aduviri Jonathan Gerardo (Div A)
+*
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void resultados(int suma,int resta,int multiplicacion,float division,int  factorial1,int factorial2);
+void calcularOperaciones(int num1,int  num2,int* suma, int* pResta, int* pMultiplicacion, float* pDivisions, int* pFactorial1, int* pFactotial2);
+int primerNumero(int* numero);
+int segundoNumero(void);
+
+int main(void) {
+	setbuf(stdout, NULL);
+	int num1;
+	int num2;
+	int opcion;
+	int suma;
+	int resta;
+	int multiplicacion;
+	float division;
+	int factorial1;
+	int factorial2;
+	int continuar=1;
+
+	do{
+		printf("1- Ingresar el primer numero (A=%d).\n", num1);
+		printf("2- Ingresar el segundo numero (B=%d)\n", num2);
+		printf("3- Calcular las operaciones.\n");
+		printf("4- informar resulrados.\n");
+		printf("5- Salir.\n");
+		scanf("%d", &opcion);
+		switch(opcion){
+			case 1:
+				primerNumero(&num1);
+
+				break;
+			case 2:
+				num2=segundoNumero();
+				break;
+			case 3:
+				calcularOperaciones(num1,num2, &suma, &resta, &multiplicacion, &division, &factorial1, &factorial2);
+				printf("Se han calculado las operaciones con exito.\n");
+				break;
+			case 4:
+				resultados(suma, resta, multiplicacion, division, factorial1, factorial2);
+				break;
+			case 5:
+				continuar=0;
+				break;
+			default:
+				printf("Por favor intente nuevamente.\n");
+
+		}
+	}while(continuar);
+	return EXIT_SUCCESS;
+}
+
+int primerNumero(int* numero){
+	int todoOk;
+	int number;
+	int limpiarBuf;
+	printf("Ingrese: ");
+	todoOk=scanf("%d", &number);
+	if (todoOk){
+		*numero=number;
+	}
+	else{
+		limpiarBuf=getchar();
+	}
+	return todoOk;
+}
+int segundoNumero(void){
+	int numero;
+	printf("Ingrese: ");
+	scanf("%d", &numero);
+	return numero;
+}
+
+void calcularOperaciones(int numero1,int numero2,int* pSuma, int* pResta, int* pMultiplicacion, float* pDivision, int* pFactorial1, int* pFactorial2){
+	int i;
+	*pFactorial1=1;
+	*pFactorial2=1;
+	*pSuma=numero1+numero2;
+	*pResta=numero1-numero2;
+	*pMultiplicacion=numero1*numero2;
+	*pDivision=(float) numero1/numero2;
+	for(i=1; i<=numero1;i++){
+		*pFactorial1*=i;
+	}
+	for(i=1; i<=numero2;i++){
+		*pFactorial2*=i;
+	}
+}
+void resultados(int suma,int resta,int multiplicacion,float division,int  factorial1,int factorial2){
+	printf("El resultado de A+B es: %d\n", suma);
+	printf("El resultado de A-B es: %d\n",resta);
+	printf("El resultado de A/B es: %.2f\n", division);
+	printf("El resultado de A*B es: %d\n", multiplicacion);
+	printf("El factorial de A es: %d y el factorial de B es: %d\n", factorial1, factorial2);
+}
