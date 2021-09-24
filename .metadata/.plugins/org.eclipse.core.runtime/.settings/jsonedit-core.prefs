@@ -1,6 +1,6 @@
-defaultColor=216,216,216
+defaultColor=205,210,222
 eclipse.preferences.version=1
-nullColor=216,216,216
+nullColor=205,210,222
 overriddenByCSS=,defaultColor,nullColor,stringColor,valueColor,
-stringColor=255,198,0
-valueColor=190,214,255
+stringColor=153,202,146
+valueColor=187,123,180
