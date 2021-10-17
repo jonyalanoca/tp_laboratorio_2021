@@ -1,0 +1,33 @@
+/*
+ * funciones.h
+ *
+ *  Created on: 16 oct. 2021
+ *      Author: Alanoca Aduviri Jonathan Gerardo
+ */
+
+#ifndef FUNCIONES_H_
+#define FUNCIONES_H_
+
+struct{
+	int id;
+	char name[51];
+	char lastName[51];
+	float salary;
+	int sector;
+	int isEmpty;
+}typedef Employee;
+
+#endif /* FUNCIONES_H_ */
+
+int initEmployees(Employee* list,int len);
+int findFreeAddEmployee(Employee* list, int len,int lenStr,int* idAuto);
+int findFreeEmployee(Employee* list, int len);
+int addEmployee(Employee* list, int len, int id, char name[], char lastName[],float salary, int sector);
+int findRemoveEmployee(Employee* list, int len);
+int findEmployeeById(Employee* list, int len,int id);
+int removeEmployee(Employee* list, int len, int id);
+int sortEmployees(Employee* list, int len, int order);
+int findmodifyEmployee(Employee* list, int len, int lenStr);
+int modifyEmployee(Employee* list, int len, int id,int lenStr);
+void printEmployee(Employee list);
+int printEmployees(Employee* list, int length);

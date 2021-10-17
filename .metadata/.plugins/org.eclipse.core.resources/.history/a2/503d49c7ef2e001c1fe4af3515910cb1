@@ -1,0 +1,16 @@
+/*
+ * utn.hx
+ *
+ *  Created on: 16 oct. 2021
+ *      Author: Jony
+ */
+
+#ifndef UTN_H_
+#define UTN_H_
+
+
+#endif /* UTN_H_ */
+int esNumerico (char str[]);
+int esSoloLetras (char str[]);
+int esPositivoFlotante(char str[]);
+

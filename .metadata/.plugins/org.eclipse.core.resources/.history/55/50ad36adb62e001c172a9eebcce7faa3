@@ -1,0 +1,13 @@
+/*
+ * utn.c
+ *
+ *  Created on: 16 oct. 2021
+ *      Author: Jony
+ */
+
+
+int esNumerico (char srr[]){
+	int i=0;
+	while(str[i]!='')
+}
+int esSoloLetras (char srr[]);
